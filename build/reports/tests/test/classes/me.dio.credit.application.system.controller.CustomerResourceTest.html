@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CustomerResourceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CustomerResourceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/me.dio.credit.application.system.controller.html">me.dio.credit.application.system.controller</a> &gt; CustomerResourceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">3.476s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">should try delete a customer with unexistent id and return bad request()</td>
+<td class="success">3.476s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>21:14:30.948 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [me.dio.credit.application.system.controller.CustomerResourceTest]: CustomerResourceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:14:31.344 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration me.dio.credit.application.system.CreditRequestSystemApplication for test class me.dio.credit.application.system.controller.CustomerResourceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2023-05-29T21:14:32.330-03:00  INFO 9293 --- [    Test worker] m.d.c.a.s.c.CustomerResourceTest         : Starting CustomerResourceTest using Java 17.0.7 with PID 9293 (started by leoparedes in /home/leoparedes/Documents/CURSOS/DIO KOTLIN/WORKSPACE/API REST)
+2023-05-29T21:14:32.332-03:00  INFO 9293 --- [    Test worker] m.d.c.a.s.c.CustomerResourceTest         : The following 1 profile is active: &quot;Teste&quot;
+2023-05-29T21:14:34.929-03:00  INFO 9293 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-29T21:14:35.061-03:00  INFO 9293 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 2 JPA repository interfaces.
+2023-05-29T21:14:36.442-03:00  INFO 9293 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.16.3 by Redgate
+2023-05-29T21:14:36.442-03:00  INFO 9293 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2023-05-29T21:14:36.443-03:00  INFO 9293 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : 
+2023-05-29T21:14:36.474-03:00  INFO 9293 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-29T21:14:37.081-03:00  INFO 9293 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:credit_application_system_db user=ADMIN
+2023-05-29T21:14:37.086-03:00  INFO 9293 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-29T21:14:37.118-03:00  INFO 9293 --- [    Test worker] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:credit_application_system_db (H2 2.1)
+2023-05-29T21:14:37.267-03:00  INFO 9293 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; does not exist yet
+2023-05-29T21:14:37.277-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.033s)
+2023-05-29T21:14:37.293-03:00  INFO 9293 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2023-05-29T21:14:37.359-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2023-05-29T21:14:37.375-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;1 - create table customer&quot;
+2023-05-29T21:14:37.415-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;2 - create table credit&quot;
+2023-05-29T21:14:37.455-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;3 - add table customer&quot;
+2023-05-29T21:14:37.498-03:00  INFO 9293 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema &quot;PUBLIC&quot;, now at version v3 (execution time 00:00.145s)
+2023-05-29T21:14:37.912-03:00  INFO 9293 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-29T21:14:38.050-03:00  INFO 9293 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-05-29T21:14:38.056-03:00  INFO 9293 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-05-29T21:14:38.452-03:00  INFO 9293 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-05-29T21:14:38.963-03:00  INFO 9293 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-05-29T21:14:39.093-03:00  INFO 9293 --- [    Test worker] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
+2023-05-29T21:14:39.832-03:00  INFO 9293 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-05-29T21:14:41.466-03:00  INFO 9293 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-29T21:14:41.473-03:00  INFO 9293 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-29T21:14:44.444-03:00  INFO 9293 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-05-29T21:14:45.758-03:00  WARN 9293 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-29T21:14:47.695-03:00  INFO 9293 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:credit_application_system_db'
+2023-05-29T21:14:47.787-03:00  INFO 9293 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-05-29T21:14:47.789-03:00  INFO 9293 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-05-29T21:14:47.797-03:00  INFO 9293 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-05-29T21:14:47.943-03:00  INFO 9293 --- [    Test worker] m.d.c.a.s.c.CustomerResourceTest         : Started CustomerResourceTest in 16.279 seconds (process running for 20.386)
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.street,
+        c1_0.zip_code,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.income,
+        c1_0.last_name,
+        c1_0.password 
+    from
+        customer c1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.street,
+        c1_0.zip_code,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.income,
+        c1_0.last_name,
+        c1_0.password 
+    from
+        customer c1_0 
+    where
+        c1_0.id=?
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/customer/1
+       Parameters = {}
+          Headers = [Accept:&quot;application/json&quot;]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = me.dio.credit.application.system.controller.CustomerResource
+           Method = me.dio.credit.application.system.controller.CustomerResource#deleteCustomer(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = me.dio.credit.application.system.exception.BusinessException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;title&quot;:&quot;Bad Request! Consul the documentation&quot;,&quot;timeStamp&quot;:&quot;2023-05-29T21:14:50.715296863&quot;,&quot;status&quot;:400,&quot;exception&quot;:&quot;class me.dio.credit.application.system.exception.BusinessException&quot;,&quot;details&quot;:{&quot;null&quot;:&quot;Id 1 not found&quot;}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.street,
+        c1_0.zip_code,
+        c1_0.cpf,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.income,
+        c1_0.last_name,
+        c1_0.password 
+    from
+        customer c1_0
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at May 29, 2023, 9:14:51 PM</p>
+</div>
+</div>
+</body>
+</html>
