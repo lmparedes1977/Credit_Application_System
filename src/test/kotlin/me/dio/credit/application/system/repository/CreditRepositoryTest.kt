@@ -66,7 +66,7 @@ class CreditRepositoryTest {
 
     private fun buildCredit(
         creditValue: BigDecimal = BigDecimal.valueOf(100000),
-        dayFirstInstallment: LocalDate = LocalDate.of(2023, JULY, 1),
+        dayFirstInstallment: LocalDate = LocalDate.of(2024, JULY, 1),
         numberOfInstallments: Int = 5,
         customer: Customer
     ) = Credit(

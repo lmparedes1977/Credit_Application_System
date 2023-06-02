@@ -2,6 +2,7 @@ package me.dio.credit.application.system.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import me.dio.credit.application.system.dto.CustomerDTO
+import me.dio.credit.application.system.dto.CustomerUpdateDTO
 import me.dio.credit.application.system.entity.Customer
 import me.dio.credit.application.system.repository.CustomerRepository
 import org.junit.jupiter.api.AfterEach
@@ -18,9 +19,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import java.math.BigDecimal
+import java.util.*
 
 @SpringBootTest
-@ActiveProfiles("Teste")
+@ActiveProfiles("Test")
 @AutoConfigureMockMvc
 @ContextConfiguration
 class CustomerResourceTest {
@@ -140,13 +142,54 @@ class CustomerResourceTest {
     }
 
     @Test
-    fun `should try delete a customer with unexistent id and return bad request`() {
+    fun `should try delete a customer with a non existent id and return bad request`() {
         // given
         val invalidId: Long = 1L
         // when & then
         mockMvc.perform(MockMvcRequestBuilders.delete("$URL/$invalidId")
             .accept(MediaType.APPLICATION_JSON))
             .andExpect(MockMvcResultMatchers.status().isBadRequest)
+            .andDo(MockMvcResultHandlers.print())
+    }
+
+    @Test
+    fun `should update a customer and return 200 status`() {
+        // given
+        val customer = customerRepository.save(builderCustomerDTO().toEntity())
+        val customerUpdateDTO: CustomerUpdateDTO = builderCustomerUpdateDTO()
+        val valueAsString: String = objectMapper.writeValueAsString(customerUpdateDTO)
+        // when & then
+        mockMvc.perform(MockMvcRequestBuilders.patch("$URL?customerId=${customer.id}")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(valueAsString)
+        )
+            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("LeoNovo"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("BigNovo"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("20000"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("90160193"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("00000000191"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("a@rouba"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Ipiranga"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.id").value("1"))
+            .andDo(MockMvcResultHandlers.print())
+    }
+    @Test
+    fun `should not update a customer with invalid id and return 400 status`() {
+        // given
+        val invalidId: Long = Random().nextLong()
+        val customerUpdateDTO: CustomerUpdateDTO = builderCustomerUpdateDTO()
+        val valueAsString: String = objectMapper.writeValueAsString(customerUpdateDTO)
+        // when & then
+        mockMvc.perform(MockMvcRequestBuilders.patch("$URL?customerId=$invalidId")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(valueAsString)
+        )
+            .andExpect(MockMvcResultMatchers.status().isBadRequest)
+            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! Consul the documentation"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.timeStamp").exists())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.details[*]").isNotEmpty)
             .andDo(MockMvcResultHandlers.print())
     }
 
@@ -167,6 +210,21 @@ class CustomerResourceTest {
         income = income,
         email = email,
         password = password,
+        zipCode = zipCode,
+        street = street
+        )
+
+    private fun builderCustomerUpdateDTO(
+        firstName: String = "LeoNovo",
+        lastName: String = "BigNovo",
+        income: BigDecimal = BigDecimal.valueOf(20000),
+        zipCode: String = "90160193",
+        street: String = "Ipiranga"
+        // id: Long = 1L
+    ) = CustomerUpdateDTO (
+        firstName = firstName,
+        lastName = lastName,
+        income = income,
         zipCode = zipCode,
         street = street
         )
