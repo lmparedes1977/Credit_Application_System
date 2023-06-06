@@ -35,7 +35,7 @@ class CustomerServiceTest {
         // then
         Assertions.assertThat(actual).isNotNull
         Assertions.assertThat(actual).isSameAs(fakeCustomer)
-        verify(exactly = 1) { customerRepository.save(fakeCustomer)}
+        verify(exactly = 1) { customerRepository.save(fakeCustomer) }
     }
 
     @Test
